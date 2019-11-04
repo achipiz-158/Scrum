@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://127.0.0.1:8000/teacher/create_appointment/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Easy Appoint</title>
+	<link rel="stylesheet" href="./Easy Appoint_files/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="./Easy Appoint_files/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./Easy Appoint_files/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="./Easy Appoint_files/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Easy Appoint_files/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./Easy Appoint_files/style.css">
+    
+    <!--datepicker source-->
+    <script type="text/javascript" src="./Easy Appoint_files/jquery.min.js"></script>
+	<script type="text/javascript" src="./Easy Appoint_files/jquery.timepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="./Easy Appoint_files/jquery.timepicker.css">
+	<script type="text/javascript" src="./Easy Appoint_files/bootstrap-datepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="./Easy Appoint_files/bootstrap-datepicker.css">
+	<script src="./Easy Appoint_files/datepair.js"></script>
+	<script src="./Easy Appoint_files/jquery.datepair.js"></script>
+
+
+    	
+    
+</head>
+<body class="login">
+
+	    
+
+<div class="container ">
+   	<div class="row studnet_nav">
+		<div class="col-sm-8">            
+			<ul class="nav nav-pills">
+			  <li class="nav-item">
+			    <a class="nav-link" href="http://127.0.0.1:8000/teacher/">Mis reservas</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="http://127.0.0.1:8000/teacher/create_appointment/">Crear reservas</a>
+			  </li>
+			</ul>	                             
+		</div>
+
+		<div class="col-sm-4">
+		 <ul class="nav nav-pills">
+			  <li class="nav-item">
+			    <p>Bienvenido </p> 
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="http://127.0.0.1:8000/teacher/create_appointment/#">sistemas</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="http://127.0.0.1:8000/logout/">Salir</a>
+			  </li>
+		  </ul>	     
+		</div>
+	  </div>
+    </div>
+
+    
+
+<div class="student">
+   <div class="container">
+      <div class="row min-height">
+        <div class="col-sm-12">
+            <div class="row main_boder">
+                <div class="col-sm-7">
+                     <h3 class="appointmnet_list">Crear reservas</h3>
+                </div>
+                <div class="col-sm-5">
+                  <form class="form-inline my-2 my-lg-0" method="GET" action="http://127.0.0.1:8000/teacher/create_appointment/">
+                      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Buscar por fecha" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">Busqueda</button>
+                   </form>
+                </div>
+            </div>
+
+            <form method="POST" action="http://127.0.0.1:8000/teacher/create_appointment/"><input type="hidden" name="csrfmiddlewaretoken" value="NSMagxMN7nsZ7y9qg6QBt9mFnwSrnmZR4EhtBsXbedx7t8m3God6ywINv1XRbPXc">
+                <div class="row" id="datepairExample">
+                  <div class="col">
+                    <select class="form-control" name="dia" required="" id="id_dia" placeholder="Fecha 30.10.2019 ">
+                  
+
+                  
+                    </select><input type="text" class="form-control time start ui-timepicker-input" name="hora_ini" required="" id="id_hora_ini" placeholder="Hora ini. 01.00 PM" autocomplete="off">
+                  </div> a
+                  <div class="col">
+                    <input type="text" class="form-control time end ui-timepicker-input" name="hora_fin" required="" id="id_hora_fin" placeholder="Hora fin. 01.30 PM " autocomplete="off">
+                  </div>
+
+                  <div class="col">
+                    <input type="text" class="form-control" name="id_salon" required="" id="id_id_salon" placeholder="Salon">
+                  </div>
+
+                  <div class="col">
+                    <button type="submit" class="btn btn-success">Agregar <i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+            </form>
+            <br>
+        </div>
+
+      <script>
+      $('#datepairExample .time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'g:ia'
+      });
+
+      $('#datepairExample .date').datepicker({
+        'format': 'd/m/yyyy',
+        'autoclose': true
+      });
+
+      $('#datepairExample').datepair();
+      </script>
+
+        <table class="table">
+           <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Salon</th>
+
+            </tr>
+          </thead>
+         <!--For Loop for all post -->
+          
+
+          <!--Filter Those not Booked yet-->
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>06:00am - 08:00am</td>
+              <td>SJ 102</td>
+              <td>
+                  <a href="http://127.0.0.1:8000/teacher/create_appointment/delete/1/">
+                    <button type="submit" class="btn btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </a>
+                  <a href="http://127.0.0.1:8000/teacher/create_appointment/update/1/">
+                    <button type="submit" class="btn btn-danger">
+                      <i class="far fa-edit"></i>
+                    </button>
+                  </a>
+              </td>
+            </tr>
+          </tbody>
+          
+
+        
+        </table>
+      </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+             Copyright 2019 , Developed By hyachipiz
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+						
+
+</body></html>
